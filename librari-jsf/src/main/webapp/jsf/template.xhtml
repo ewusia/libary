@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<h:head>
+    <title>Librari JSF</title>
+    <h:outputStylesheet library="css" name="style.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet"/>
+
+</h:head>
+
+<h:body>
+    <header>
+        <h1><h:link value="Librari" outcome="publisher"/> </h1>
+        <h2><ui:insert name="title">Default title</ui:insert></h2>
+        <h3></h3>
+    </header>
+
+    <section>
+
+        <ui:insert name="content">
+            default content
+        </ui:insert>
+
+    </section>
+    >
+</h:body>
+</html>

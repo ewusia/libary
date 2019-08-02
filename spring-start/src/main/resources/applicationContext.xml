@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xmlns:p="http://www.springframework.org/schema/p" xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/util
+       http://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+
+<!--    <bean id="candies" class="lab.spring.Candies" p:descriptions-ref="candiesList">
+
+    </bean>-->
+    <context:annotation-config/>
+    <context:component-scan base-package="lab.spring"/>
+<!--
+    <bean id="candies" class="lab.spring.Candies" autowire="byType">
+
+    </bean>-->
+
+<!--    <bean class="java.lang.String">
+        <constructor-arg value="pizza"/>
+    </bean>-->
+
+<!--    <util:list id="descriptions">
+        <value>zelki</value>
+        <value>principolo</value>
+        <value>delicje</value>
+    </util:list>-->
+    <!--    <bean id="candies" name="c1, c2, c3" class="lab.spring.Candies" lazy-init="false" scope="prototype">
+            <property name="description" value="krowki"/>
+        </bean>-->
+
+    <!--    <bean id="candies" name="c1, c2, c3" class="lab.spring.Candies" lazy-init="false" scope="prototype">
+            <constructor-arg value="krowki"/>
+            <property name="description" value="delicje"/>
+        </bean>
+
+        <bean id="element2" class="lab.spring.Candies" lazy-init="false" scope="prototype">
+            <property name="description" value="trufle"/>
+        </bean>-->
+
+    <!--    <bean id="element2" class="lab.spring.Candies" lazy-init="false" scope="prototype">
+            <property name="description" >
+            <null></null>
+            </property>
+        </bean>-->
+
+<!--
+       <alias name="candies" alias="element"/>
+-->
+    <!--
+        &lt;!&ndash;    <bean id="box" class="lab.spring.Box" lazy-init="true" scope="prototype">
+                <property name="element" ref="element"/>
+            </bean>&ndash;&gt;
+    -->
+<!--        <bean id="box" class="lab.spring.Box" autowire="byType">
+        </bean>-->
+
+<!--    <bean id="box" class="lab.spring.Box" autowire="byName">
+    </bean>-->
+
+
+</beans>

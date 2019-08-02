@@ -1,21 +1,25 @@
 package lab.librari.model;
 
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
+@Table(name = "PUBLISHER")
+public class Publisher {
 
-
-
-public class Publisher implements Serializable {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     private String name;
 
+    @Column(name="LOGOIMAGE")
     private String logoImage;
 
+    @OneToMany(mappedBy = "publisher", fetch = FetchType.EAGER)
     private List<Book> books = new ArrayList<Book>();
 
 

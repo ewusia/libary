@@ -12,16 +12,25 @@
     <modules>
         <module>librari-model</module>
         <module>librari-service</module>
-        <module>librari-dao</module>        
+        <module>librari-dao</module>
+        <module>librari-web</module>
+<!--
+        <module>librari-jsf</module>
+-->
+        <module>spring-start</module>
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <jboss.dir>d:\edu\dev\env\wildfly11</jboss.dir>
+        <jboss.dir>C:\Program Files\wildfly-11.0.0.Final</jboss.dir>
     </properties>
 
     <dependencies>
-      
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>5.1.4.RELEASE</version>
+        </dependency>
     </dependencies>
 
 
