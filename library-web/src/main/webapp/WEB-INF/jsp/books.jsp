@@ -37,5 +37,3 @@
     </tr>
 
 </table>
-
-<jsp:include page="footer.jsp"/>

@@ -12,7 +12,7 @@
 <body>
 
 <header>
-    <h1><a href="<c:url value="/publishers"/>">Library</a></h1>
+    <h1><a href="<c:url value="/publishers"/>">Library2</a></h1>
     <h2>${param.title}</h2>
     <h3>
 

@@ -24,12 +24,9 @@ public class PublisherServlet extends HttpServlet {
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         logger.info("about to fetch publishers list");
 
-        //long id = Long.parseLong(req.getParameter("publisherId"));
-
         List<Publisher> publishers = bs.getPublishers(); // komunikacja z warstawa uslug
 
         req.setAttribute("publishers", publishers);
-        req.setAttribute("slogan", "Because you read");
 
         req.getRequestDispatcher("/WEB-INF/jsp/publishers.jsp").forward(req, resp);
 

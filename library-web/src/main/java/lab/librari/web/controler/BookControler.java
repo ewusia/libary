@@ -42,7 +42,6 @@ public class BookControler {
         List<Book> books = bs.getBooksForPublisher(publisherId);
 
         model.addAttribute("books", books);
-        //model.addAttribute("slogan", "Ucz sie, ucz..");
         model.addAttribute("publisherId", publisherId);
 
         return "books";

@@ -44,4 +44,3 @@
 
 </table>
 </form:form>
-<jsp:include page="footer.jsp"/>

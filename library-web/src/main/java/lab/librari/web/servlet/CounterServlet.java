@@ -36,12 +36,5 @@ public class CounterServlet extends HttpServlet {
         Cookie cookie = new Cookie("custom-cookie", "custom-value");
         cookie.setMaxAge(60*5);
         resp.addCookie(cookie);
-
-        /*resp.getWriter().write(
-                "<html><body>" +
-                        "This site has been visited " + count + " times" +
-                        "</body></html>"
-        );*/
-        req.getRequestDispatcher("/WEB-INF/jsp/counter.jsp").forward(req, resp);
     }
 }
