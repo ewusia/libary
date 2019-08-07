@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:contex="http://www.springframework.org/schema/context"
+       xmlns:security="http://www.springframework.org/schema/security"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <mvc:annotation-driven/>
+    <contex:component-scan base-package="lab.library"/>
+
+    <mvc:resources mapping="/css/**" location="css/"/>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix" value="/WEB-INF/jsp/"/>
+        <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="messages"/>
+    </bean>
+
+    <bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+        <property name="defaultLocale" value="pl"/>
+    </bean>
+
+    <mvc:interceptors>
+        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+            <property name="paramName" value="lang"/>
+        </bean>
+
+        <bean class="lab.library.web.controler.TimeInterseptor">
+            <property name="opening" value="6"/>
+            <property name="closing" value="23"/>
+        </bean>
+    </mvc:interceptors>
+
+<!--    <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
+
+    </bean>-->
+    <import resource="classpath*:daoContext.xml"/>
+
+    <security:global-method-security pre-post-annotations="enabled"/>
+
+    <security:http auto-config="true">
+        <!--<security:intercept-url
+                pattern="/books/add" method="GET" access="hasAuthority('ADMIN')"/>
+        <security:intercept-url
+                pattern="/books/add" method="POST" access="hasAuthority('ADMIN')"/>-->
+        <security:http-basic/>
+        <security:logout
+        invalidate-session="true"
+        logout-success-url="/publishers"/>
+    </security:http>
+
+    <security:authentication-manager>
+        <security:authentication-provider>
+            <security:user-service>
+                <security:user name="user1"
+                               password="$2a$04$TN4CgHe7ymqBD4JpH2da/OVXHWsTEwCkRAV44mpd.7NojG3OOw1Gi"
+                               authorities="ADMIN"/>
+                <security:user name="user2"
+                               password="$2a$04$/Q63fx69QI0tCBDGmNjrweZnb1j0PdcKN0Shw6Gku1h9WTsOzButO"
+                               authorities="REGULAR"/>
+            </security:user-service>
+            <security:password-encoder ref="passwordEncoder"/>
+        </security:authentication-provider>
+    </security:authentication-manager>
+
+    <bean id="passwordEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder">
+
+    </bean>
+
+</beans>

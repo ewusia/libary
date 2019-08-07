@@ -1,0 +1,25 @@
+package lab.library.dao;
+
+
+import lab.library.model.Book;
+import lab.library.model.Publisher;
+
+import java.util.List;
+
+public interface BooksDAO{
+
+    List<Publisher> getAllPublishers();
+
+    List<Publisher> getPublishersPage(int pageNumber, int pageSize);
+
+    Publisher getPublisherById(Long id);
+
+    List<Book> getBooksByPublisher(Publisher r);
+
+    Book getBookById(Long mId);
+
+    Publisher addPublisher(Publisher r);
+
+    Book addBook(Book m);
+
+}

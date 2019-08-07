@@ -5,19 +5,17 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>lab</groupId>
-    <artifactId>librari</artifactId>
+    <artifactId>library</artifactId>
     <version>1.0</version>
     <packaging>pom</packaging>
 
     <modules>
-        <module>librari-model</module>
-        <module>librari-service</module>
-        <module>librari-dao</module>
-        <module>librari-web</module>
-<!--
-        <module>librari-jsf</module>
--->
-        <module>spring-start</module>
+        <module>library-model</module>
+        <module>library-service</module>
+        <module>library-dao</module>
+        <module>library-web</module>
+
+        <module>spring</module>
     </modules>
 
     <properties>
