@@ -1,7 +1,6 @@
 package lab.library.web.servlet;
 
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.*;
 import java.io.IOException;
 import java.util.logging.Logger;
